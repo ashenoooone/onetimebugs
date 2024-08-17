@@ -4,6 +4,9 @@ import { type FC, useEffect, useMemo } from "react";
 
 import { App } from "@/shared/components/App.tsx";
 import { ErrorBoundary } from "@/shared/components/ErrorBoundary.tsx";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 const ErrorBoundaryError: FC<{ error: unknown }> = ({ error }) => (
   <div>
@@ -44,6 +47,8 @@ const Inner: FC = () => {
 
 export const Root: FC = () => (
   <ErrorBoundary fallback={ErrorBoundaryError}>
-    <Inner />
+    <QueryClientProvider client={queryClient}>
+      <Inner />
+    </QueryClientProvider>
   </ErrorBoundary>
 );

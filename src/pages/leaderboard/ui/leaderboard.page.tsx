@@ -1,4 +1,5 @@
-import { Leaderboard } from "@/entities/leaderboard";
+import { Leaderboard, useGetLeaderboard } from "@/entities/leaderboard";
+import { Loader } from "@/shared/components/loader";
 import { Page } from "@/shared/components/page";
 import { cn } from "@/shared/utils";
 import React from "react";
@@ -63,6 +64,21 @@ const data = {
 
 export const LeaderBoardPage = React.memo((props: LeaderBoardPageProps) => {
   const { className } = props;
+  const { data, isFetching, isError } = useGetLeaderboard();
+
+  if (isFetching) {
+    return (
+      <Loader
+        imageStyles="w-20 h-20"
+        className="w-full h-screen flex items-center justify-center"
+      />
+    );
+  }
+
+  if (isError) {
+    return null;
+  }
+
   return (
     <Page className={cn("", className)}>
       <Leaderboard leaderboard={data} />

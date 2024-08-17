@@ -8,7 +8,7 @@ export const $api = axios.create({
 });
 
 $api.interceptors.request.use((config) => {
-  const cookieToken = localStorage.get(LOCAL_STORAGE_USER);
+  const cookieToken = localStorage.getItem(LOCAL_STORAGE_USER);
 
   if (cookieToken) {
     // TODO ПАРСИНГ ТОКЕНА
