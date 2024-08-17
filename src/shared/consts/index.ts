@@ -1,0 +1,1 @@
+export const LOCAL_STORAGE_USER = "UE2398E12";

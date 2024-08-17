@@ -2,6 +2,7 @@ import type { ComponentType, JSX } from "react";
 
 import { IndexPage } from "@/pages/IndexPage/IndexPage";
 import { ClipboardCheck, House, Trophy, UsersRound } from "lucide-react";
+import { LeaderBoardPage } from "@/pages/leaderboard/ui/leaderboard.page";
 
 export interface Route {
   path: string;
@@ -20,7 +21,7 @@ export const routes: Route[] = [
   },
   {
     path: "/leaders",
-    Component: IndexPage,
+    Component: LeaderBoardPage,
     title: "Leaders",
     icon: <Trophy />,
   },

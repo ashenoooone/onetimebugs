@@ -1,15 +1,15 @@
-import { classNames, useUtils } from "@telegram-apps/sdk-react";
+import { useUtils } from "@telegram-apps/sdk-react";
 import { type FC, type MouseEventHandler, useCallback } from "react";
 import { Link as RouterLink, type LinkProps } from "react-router-dom";
 
 import "./Link.css";
+import { cn } from "@/shared/utils/cn";
 
-export const Link: FC<LinkProps> = ({
-  className,
-  onClick: propsOnClick,
-  to,
-  ...rest
-}) => {
+export const Link: FC<
+  LinkProps & {
+    active?: boolean;
+  }
+> = ({ className, onClick: propsOnClick, active, to, ...rest }) => {
   const utils = useUtils();
 
   const onClick = useCallback<MouseEventHandler<HTMLAnchorElement>>(
@@ -45,7 +45,9 @@ export const Link: FC<LinkProps> = ({
       {...rest}
       to={to}
       onClick={onClick}
-      className={classNames("link", className)}
+      className={cn("link", className, {
+        [`text-yellow`]: active,
+      })}
     />
   );
 };

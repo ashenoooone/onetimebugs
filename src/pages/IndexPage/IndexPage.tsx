@@ -1,13 +1,14 @@
-import { Section, Cell, List } from "@telegram-apps/telegram-ui";
+import { Section, Cell } from "@telegram-apps/telegram-ui";
 import type { FC } from "react";
 
-import { Link } from "@/components/Link/Link.tsx";
+import { Link } from "@/shared/components/Link/Link.tsx";
+import { Page } from "@/shared/components/page";
 
 export const IndexPage: FC = () => {
   return (
-    <List className="flex flex-col min-h-screen max-w-[900px] mx-auto items-center">
+    <Page>
       <Section
-        className="flex-grow"
+        className="w-full"
         header="Features"
         footer="You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects"
       >
@@ -15,6 +16,6 @@ export const IndexPage: FC = () => {
           <Cell subtitle="Connect your TON wallet">TON Connect</Cell>
         </Link>
       </Section>
-    </List>
+    </Page>
   );
 };

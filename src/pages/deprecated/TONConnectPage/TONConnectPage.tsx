@@ -12,7 +12,7 @@ import {
 } from "@telegram-apps/telegram-ui";
 import type { FC } from "react";
 
-import { DisplayData } from "@/components/DisplayData/DisplayData.tsx";
+import { DisplayData } from "@/shared/components/DisplayData/DisplayData.tsx";
 
 import "./TONConnectPage.css";
 

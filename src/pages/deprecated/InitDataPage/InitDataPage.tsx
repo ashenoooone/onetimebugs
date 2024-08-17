@@ -2,7 +2,7 @@ import { type FC, useMemo } from 'react';
 import { useInitData, useLaunchParams, type User } from '@telegram-apps/sdk-react';
 import { List, Placeholder } from '@telegram-apps/telegram-ui';
 
-import { DisplayData, type DisplayDataRow } from '@/components/DisplayData/DisplayData.tsx';
+import { DisplayData, type DisplayDataRow } from '@/shared/components/DisplayData/DisplayData.tsx';
 
 function getUserRows(user: User): DisplayDataRow[] {
   return [

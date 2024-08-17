@@ -14,7 +14,7 @@ import { type FC, useEffect, useMemo } from "react";
 import { Navigate, Route, Router, Routes } from "react-router-dom";
 
 import { routes } from "@/navigation/routes.tsx";
-import { Navigation } from "./navigation";
+import { Navigation } from "./navigation.tsx";
 
 export const App: FC = () => {
   const lp = useLaunchParams();
@@ -25,10 +25,6 @@ export const App: FC = () => {
   useEffect(() => {
     return bindMiniAppCSSVars(miniApp, themeParams);
   }, [miniApp, themeParams]);
-
-  useEffect(() => {
-    return bindThemeParamsCSSVars(themeParams);
-  }, [themeParams]);
 
   useEffect(() => {
     return viewport && bindViewportCSSVars(viewport);
