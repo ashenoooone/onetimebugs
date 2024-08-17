@@ -12,6 +12,8 @@ const data = {
   me: {
     position: 1,
     balance: 1000,
+    telegramId: 3,
+    username: "username",
   },
   users: [
     {

@@ -17,7 +17,13 @@ export const Leaderboard = React.memo((props: LeaderboardProps) => {
       <LeaderboardHeader leaderboard={leaderboard} />
       <div className="flex flex-col gap-4 mt-4">
         {leaderboard.users.map((user) => {
-          return <LeaderboardItem key={user.telegramId} user={user} />;
+          return (
+            <LeaderboardItem
+              currentUser={leaderboard.me}
+              key={user.telegramId}
+              user={user}
+            />
+          );
         })}
       </div>
     </div>

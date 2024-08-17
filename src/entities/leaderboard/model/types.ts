@@ -9,6 +9,6 @@ export type LeaderBoardUserType = UserType & UserLeaderboardType;
 
 export type LeaderboardType = {
   totalUsers: number;
-  me: UserLeaderboardType;
+  me: LeaderBoardUserType;
   users: LeaderBoardUserType[];
 };

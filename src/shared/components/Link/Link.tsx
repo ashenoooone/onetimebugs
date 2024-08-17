@@ -46,7 +46,7 @@ export const Link: FC<
       to={to}
       onClick={onClick}
       className={cn("link", className, {
-        [`text-yellow`]: active,
+        [`text-special-yellow`]: active,
       })}
     />
   );

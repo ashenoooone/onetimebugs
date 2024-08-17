@@ -6,10 +6,11 @@ import { getUserAvatar } from "../model/utils";
 
 type LeaderboardItemProps = {
   user: LeaderBoardUserType;
+  currentUser: LeaderBoardUserType;
 };
 
 export const LeaderboardItem = React.memo((props: LeaderboardItemProps) => {
-  const { user } = props;
+  const { user, currentUser } = props;
 
   const userPosition = useMemo(() => {
     if (user.position === 1) {
@@ -25,7 +26,11 @@ export const LeaderboardItem = React.memo((props: LeaderboardItemProps) => {
   }, []);
 
   return (
-    <div className={cn("flex justify-between items-center w-full")}>
+    <div
+      className={cn("flex p-2 rounded-xl justify-between items-center w-full", {
+        "bg-special-yellow/10": user.telegramId === currentUser.telegramId,
+      })}
+    >
       <div className="flex gap-2 items-center">
         <Avatar size={48} src={getUserAvatar(user)} />
         <div className="flex flex-col">
