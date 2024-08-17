@@ -42,8 +42,6 @@ export const App: FC = () => {
     return () => navigator.detach();
   }, [navigator]);
 
-  // управление стейтом приложения глобальным
-
   return (
     <AppRoot
       appearance={miniApp.isDark ? "dark" : "light"}
