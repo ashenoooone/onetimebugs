@@ -1,14 +1,11 @@
 import { routes } from "@/navigation/routes.tsx";
-import React, { useCallback } from "react";
-import { FixedLayout, Tabbar, Text } from "@telegram-apps/telegram-ui";
-import { useLocation, useNavigate } from "react-router-dom";
+import React from "react";
+import { FixedLayout, Text } from "@telegram-apps/telegram-ui";
+import { useLocation } from "react-router-dom";
 import { Link } from "./Link/Link.tsx";
-import { useThemeParams } from "@telegram-apps/sdk-react";
 
 export const Navigation = React.memo(() => {
   const location = useLocation();
-  const navigate = useNavigate();
-  const themeParams = useThemeParams();
 
   const currentPathname = location.pathname;
 

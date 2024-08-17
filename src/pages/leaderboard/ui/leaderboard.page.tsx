@@ -1,4 +1,5 @@
 import { Leaderboard } from "@/entities/leaderboard";
+import { Page } from "@/shared/components/page";
 import { cn } from "@/shared/utils";
 import React from "react";
 
@@ -61,9 +62,9 @@ const data = {
 export const LeaderBoardPage = React.memo((props: LeaderBoardPageProps) => {
   const { className } = props;
   return (
-    <div className={cn("", className)}>
+    <Page className={cn("", className)}>
       <Leaderboard leaderboard={data} />
-    </div>
+    </Page>
   );
 });
 

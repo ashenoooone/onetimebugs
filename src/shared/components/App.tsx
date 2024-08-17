@@ -1,7 +1,6 @@
 import { useIntegration } from "@telegram-apps/react-router-integration";
 import {
   bindMiniAppCSSVars,
-  bindThemeParamsCSSVars,
   bindViewportCSSVars,
   initNavigator,
   useLaunchParams,

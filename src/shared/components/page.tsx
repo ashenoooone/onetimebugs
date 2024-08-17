@@ -11,7 +11,7 @@ export const Page = React.memo((props: PageProps) => {
   return (
     <div
       className={cn(
-        "flex flex-col min-h-screen max-w-mx-container mx-auto items-center w-full",
+        "flex flex-col min-h-screen py-4 max-w-mx-container mx-auto items-center w-full",
         className
       )}
     >

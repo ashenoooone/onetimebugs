@@ -12,8 +12,6 @@ import {
 } from "@telegram-apps/telegram-ui";
 import type { FC } from "react";
 
-import { DisplayData } from "@/shared/components/DisplayData/DisplayData.tsx";
-
 import "./TONConnectPage.css";
 
 export const TONConnectPage: FC = () => {
@@ -38,10 +36,10 @@ export const TONConnectPage: FC = () => {
     );
   }
 
-  const {
-    account: { chain, publicKey, address },
-    device: { appName, appVersion, maxProtocolVersion, platform, features },
-  } = wallet;
+  // const {
+  //   account: { chain, publicKey, address },
+  //   device: { appName, appVersion, maxProtocolVersion, platform, features },
+  // } = wallet;
 
   return (
     <List>
@@ -70,30 +68,6 @@ export const TONConnectPage: FC = () => {
           <TonConnectButton className="ton-connect-page__button-connected" />
         </>
       )}
-      <DisplayData
-        header="Account"
-        rows={[
-          { title: "Address", value: address },
-          { title: "Chain", value: chain },
-          { title: "Public Key", value: publicKey },
-        ]}
-      />
-      <DisplayData
-        header="Device"
-        rows={[
-          { title: "App Name", value: appName },
-          { title: "App Version", value: appVersion },
-          { title: "Max Protocol Version", value: maxProtocolVersion },
-          { title: "Platform", value: platform },
-          {
-            title: "Features",
-            value: features
-              .map((f) => (typeof f === "object" ? f.name : undefined))
-              .filter((v) => v)
-              .join(", "),
-          },
-        ]}
-      />
     </List>
   );
 };
