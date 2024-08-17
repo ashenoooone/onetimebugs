@@ -3,13 +3,13 @@ import type { FC } from "react";
 
 import { Link } from "@/shared/components/Link/Link.tsx";
 import { Page } from "@/shared/components/page";
-import { retrieveLaunchParams } from "@telegram-apps/sdk-react";
+import { useLaunchParams } from "@telegram-apps/sdk-react";
 
 export const IndexPage: FC = () => {
-  const { initDataRaw } = retrieveLaunchParams();
+  const lp = useLaunchParams();
 
-  console.log(123);
-  console.log(initDataRaw);
+  console.log(11111);
+  console.log(lp);
 
   return (
     <Page>
