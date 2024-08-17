@@ -9,7 +9,6 @@ export const IndexPage: FC = () => {
   const initData = useInitDataRaw();
 
   console.log(initData);
-  ``;
 
   return (
     <Page>
@@ -19,7 +18,7 @@ export const IndexPage: FC = () => {
         footer="You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects"
       >
         <Link to="/ton-connect">
-          <Cell subtitle="Connect your TON wallet">TON Connect</Cell>
+          <Cell subtitle="Connect your TON wallet">TON 123321</Cell>
         </Link>
       </Section>
     </Page>
