@@ -13,7 +13,8 @@ import {
 export const IndexPage: FC = () => {
   const { initDataRaw, initData } = retrieveLaunchParams();
 
-  console.log(JSON.stringify(initData));
+  console.log("@", JSON.stringify(initData));
+  console.log("!", JSON.stringify(initDataRaw));
 
   return (
     <Page>
