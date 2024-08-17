@@ -19,12 +19,7 @@ import { Navigation } from "@/shared/components/navigation";
 export const App: FC = () => {
   const lp = useLaunchParams();
   const miniApp = useMiniApp();
-  const themeParams = useThemeParams();
   const viewport = useViewport();
-
-  useEffect(() => {
-    return bindMiniAppCSSVars(miniApp, themeParams);
-  }, [miniApp, themeParams]);
 
   useEffect(() => {
     return viewport && bindViewportCSSVars(viewport);
