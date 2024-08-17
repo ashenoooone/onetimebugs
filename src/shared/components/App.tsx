@@ -9,7 +9,7 @@ import {
   useViewport,
 } from "@telegram-apps/sdk-react";
 import { AppRoot } from "@telegram-apps/telegram-ui";
-import { type FC, useEffect, useMemo, useState } from "react";
+import { type FC, useEffect, useMemo } from "react";
 import { Navigate, Route, Router, Routes } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
