@@ -12,6 +12,7 @@ import {
 export const IndexPage: FC = () => {
   const { initDataRaw } = retrieveLaunchParams();
 
+  console.log(123);
   console.log(initDataRaw);
 
   return (
