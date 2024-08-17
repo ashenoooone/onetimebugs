@@ -14,7 +14,7 @@ import { Navigate, Route, Router, Routes } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import { routes } from "@/navigation/routes.tsx";
-import { Navigation } from "./navigation.tsx";
+import { Navigation } from "@/shared/components/navigation";
 
 export const App: FC = () => {
   const lp = useLaunchParams();
@@ -42,6 +42,8 @@ export const App: FC = () => {
     return () => navigator.detach();
   }, [navigator]);
 
+  // управление стейтом приложения глобальным
+
   return (
     <AppRoot
       appearance={miniApp.isDark ? "dark" : "light"}
@@ -49,7 +51,12 @@ export const App: FC = () => {
     >
       <Router location={location} navigator={reactNavigator}>
         <TransitionGroup>
-          <CSSTransition key={location.key} classNames="fade" timeout={300}>
+          <CSSTransition
+            key={location.key}
+            classNames="fade"
+            timeout={300}
+            exit={false}
+          >
             <Routes location={location}>
               {routes.map((route) => (
                 <Route key={route.path} {...route} />

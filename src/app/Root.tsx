@@ -2,9 +2,9 @@ import { SDKProvider, useLaunchParams } from "@telegram-apps/sdk-react";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { type FC, useEffect, useMemo } from "react";
 
-import { App } from "@/shared/components/App.tsx";
 import { ErrorBoundary } from "@/shared/components/ErrorBoundary.tsx";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { App } from "./App";
 
 const queryClient = new QueryClient();
 
