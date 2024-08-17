@@ -3,11 +3,13 @@ import type { FC } from "react";
 
 import { Link } from "@/shared/components/Link/Link.tsx";
 import { Page } from "@/shared/components/page";
-import { useInitDataRaw } from "@telegram-apps/sdk-react";
+import { useInitData, useLaunchParams } from "@telegram-apps/sdk-react";
 
 export const IndexPage: FC = () => {
-  const initData = useInitDataRaw();
+  const initDataRaw = useLaunchParams().initDataRaw;
+  const initData = useInitData();
 
+  console.log(initDataRaw);
   console.log(initData);
 
   return (
