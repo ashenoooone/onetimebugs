@@ -9,6 +9,7 @@ export const IndexPage: FC = () => {
   const initData = useInitDataRaw();
 
   console.log(initData);
+  ``;
 
   return (
     <Page>

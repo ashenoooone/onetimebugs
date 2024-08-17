@@ -70,7 +70,7 @@ export const LeaderBoardPage = React.memo((props: LeaderBoardPageProps) => {
     return <Loader centered imageStyles="w-20 h-20" />;
   }
 
-  if (isError) {
+  if (isError || !data) {
     return null;
   }
 
