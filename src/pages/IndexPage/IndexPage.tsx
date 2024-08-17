@@ -5,14 +5,15 @@ import { Link } from "@/shared/components/Link/Link.tsx";
 import { Page } from "@/shared/components/page";
 import {
   initInitData,
+  retrieveLaunchParams,
   useInitData,
   useInitDataRaw,
 } from "@telegram-apps/sdk-react";
 
 export const IndexPage: FC = () => {
-  const id = useInitData();
+  const { initDataRaw, initData } = retrieveLaunchParams();
 
-  console.log(JSON.stringify(id));
+  console.log(JSON.stringify(initData));
 
   return (
     <Page>
