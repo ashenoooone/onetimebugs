@@ -1,8 +1,8 @@
 import { routes } from "@/navigation/routes";
 import React, { useCallback } from "react";
-import { Tabbar, Text } from "@telegram-apps/telegram-ui";
-import { Link } from "./Link/Link";
+import { FixedLayout, Tabbar, Text } from "@telegram-apps/telegram-ui";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "./Link/Link";
 
 export const Navigation = React.memo(() => {
   const location = useLocation();
@@ -18,20 +18,25 @@ export const Navigation = React.memo(() => {
   );
 
   return (
-    <Tabbar>
-      {routes.map((route) => {
-        return (
-          <Tabbar.Item
-            key={route.path}
-            onClick={onTabbarClick(route.path)}
-            selected={currentPathname === route.path}
-            text={route.title}
-          >
-            {route.icon}
-          </Tabbar.Item>
-        );
-      })}
-    </Tabbar>
+    <FixedLayout
+      vertical="bottom"
+      className="px-5 py-3 bg-[var(--tg-theme-bg-color)]"
+    >
+      <div className="flex justify-between">
+        {routes.map((r) => {
+          return (
+            <Link
+              key={r.path}
+              to={r.path}
+              className="flex flex-col gap-1 items-center"
+            >
+              {r.icon}
+              <Text weight="3">{r.title}</Text>
+            </Link>
+          );
+        })}
+      </div>
+    </FixedLayout>
   );
 });
 
