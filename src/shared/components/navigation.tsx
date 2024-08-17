@@ -22,7 +22,7 @@ export const Navigation = React.memo(() => {
       vertical="bottom"
       className="px-5 py-3 bg-[var(--tg-theme-bg-color)]"
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between max-w-mx-container mx-auto">
         {routes.map((r) => {
           return (
             <Link
