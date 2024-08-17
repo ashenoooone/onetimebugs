@@ -5,8 +5,10 @@ export type UserLeaderboardType = {
   balance: number;
 };
 
+export type LeaderBoardUserType = UserType & UserLeaderboardType;
+
 export type LeaderboardType = {
   totalUsers: number;
   me: UserLeaderboardType;
-  users: (UserType & UserLeaderboardType)[];
+  users: LeaderBoardUserType[];
 };
