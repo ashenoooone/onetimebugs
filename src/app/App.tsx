@@ -10,7 +10,13 @@ import {
 } from "@telegram-apps/sdk-react";
 import { AppRoot } from "@telegram-apps/telegram-ui";
 import { type FC, useEffect, useMemo } from "react";
-import { Navigate, Route, Router, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Router,
+  Routes,
+} from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import { routes } from "@/navigation/routes.tsx";
@@ -25,31 +31,26 @@ export const App: FC = () => {
     return viewport && bindViewportCSSVars(viewport);
   }, [viewport]);
 
-  // Create a new application navigator and attach it to the browser history, so it could modify
-  // it and listen to its changes.
-  const navigator = useMemo(() => initNavigator("app-navigation-state"), []);
-  const [location, reactNavigator] = useIntegration(navigator);
+  // // Create a new application navigator and attach it to the browser history, so it could modify
+  // // it and listen to its changes.
+  // const navigator = useMemo(() => initNavigator("app-navigation-state"), []);
+  // const [location, reactNavigator] = useIntegration(navigator);
 
-  // Don't forget to attach the navigator to allow it to control the BackButton state as well
-  // as browser history.
-  useEffect(() => {
-    navigator.attach();
-    return () => navigator.detach();
-  }, [navigator]);
+  // // Don't forget to attach the navigator to allow it to control the BackButton state as well
+  // // as browser history.
+  // useEffect(() => {
+  //   navigator.attach();
+  //   return () => navigator.detach();
+  // }, [navigator]);
 
   return (
     <AppRoot
       appearance={miniApp.isDark ? "dark" : "light"}
       platform={["macos", "ios"].includes(lp.platform) ? "ios" : "base"}
     >
-      <Router location={location} navigator={reactNavigator}>
+      <BrowserRouter>
         <TransitionGroup>
-          <CSSTransition
-            key={location.key}
-            classNames="fade"
-            timeout={300}
-            exit={false}
-          >
+          <CSSTransition classNames="fade" timeout={300} exit={false}>
             <Routes location={location}>
               {routes.map((route) => (
                 <Route key={route.path} {...route} />
@@ -59,7 +60,7 @@ export const App: FC = () => {
           </CSSTransition>
         </TransitionGroup>
         <Navigation />
-      </Router>
+      </BrowserRouter>
     </AppRoot>
   );
 };
