@@ -1,6 +1,6 @@
 import { Leaderboard, useGetLeaderboard } from "@/entities/leaderboard";
-import { Loader } from "@/shared/components/loader";
-import { Page } from "@/shared/components/page";
+import { Loader } from "@/shared/ui/loader.tsx";
+import { Page } from "@/shared/ui/page.tsx";
 import { cn } from "@/shared/utils";
 import React from "react";
 

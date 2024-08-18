@@ -1,15 +1,17 @@
 import { FriendsList, useGetFriends } from "@/entities/friends";
-import { Loader } from "@/shared/components/loader";
+import { Loader } from "@/shared/ui/loader.tsx";
 import { cn } from "@/shared/utils";
 import React from "react";
 import MomDuck from "@/shared/assets/duck_mom.png";
-import { Page } from "@/shared/components/page";
+import { Page } from "@/shared/ui/page.tsx";
 import {
   LargeTitle,
   Subheadline,
   Text,
   Title,
 } from "@telegram-apps/telegram-ui";
+import { InviteUserButton, CopyInviteLinkButton } from "@/features/invite";
+import { userStore } from "@/entities/user/model/user.store";
 
 type FriendsPageProps = {
   className?: string;
@@ -42,6 +44,7 @@ const TEST_DATA = {
 export const FriendsPage = React.memo((props: FriendsPageProps) => {
   const { className } = props;
   const { data, isError, isFetching } = useGetFriends();
+  const user = userStore.use.me();
 
   if (isFetching) {
     return <Loader centered />;
@@ -60,6 +63,10 @@ export const FriendsPage = React.memo((props: FriendsPageProps) => {
         Invite friends <br /> to get spins and tokens
       </Subheadline>
       <img src={MomDuck} className="w-32" />
+      <div className="my-2 flex items-stretch gap-1 max-w-content w-full">
+        <InviteUserButton className="basis-1/2" userId={user?.id} />
+        <CopyInviteLinkButton userId={user?.id} className="basis-1/2" />
+      </div>
       <FriendsList
         className="mt-4 max-w-content w-full"
         friends={TEST_DATA?.friend ?? []}

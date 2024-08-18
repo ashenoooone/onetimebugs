@@ -5,7 +5,7 @@ import { type FC, useEffect, useMemo } from "react";
 import {
   ErrorBoundary,
   ErrorBoundaryError,
-} from "@/shared/components/ErrorBoundary.tsx";
+} from "@/shared/ui/ErrorBoundary.tsx";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { App } from "./App";
 import { AppState } from "./ui/app-state";

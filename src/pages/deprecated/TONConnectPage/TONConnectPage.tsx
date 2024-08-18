@@ -13,6 +13,7 @@ import {
 import type { FC } from "react";
 
 import "./TONConnectPage.css";
+import { Typography } from "@/shared/ui/typography";
 
 export const TONConnectPage: FC = () => {
   const wallet = useTonWallet();
@@ -25,10 +26,10 @@ export const TONConnectPage: FC = () => {
         header="TON Connect"
         description={
           <>
-            <Text>
+            <Typography variant={"h5"}>
               To display the data related to the TON Connect, it is required to
               connect your wallet
-            </Text>
+            </Typography>
             <TonConnectButton className="ton-connect-page__button" />
           </>
         }

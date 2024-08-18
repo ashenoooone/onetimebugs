@@ -20,7 +20,7 @@ import {
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import { routes } from "@/navigation/routes.tsx";
-import { Navigation } from "@/shared/components/navigation";
+import { Navigation } from "@/shared/ui/navigation.tsx";
 
 export const App: FC = () => {
   const lp = useLaunchParams();

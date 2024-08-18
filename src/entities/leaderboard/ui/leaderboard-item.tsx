@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { LeaderBoardUserType } from "../model/types";
 import { Avatar, Text } from "@telegram-apps/telegram-ui";
 import { getUserAvatar } from "@/entities/user/model/utils";
+import { Typography } from "@/shared/ui/typography";
 
 type LeaderboardItemProps = {
   user: LeaderBoardUserType;
@@ -34,11 +35,11 @@ export const LeaderboardItem = React.memo((props: LeaderboardItemProps) => {
       <div className="flex gap-2 items-center">
         <Avatar size={48} src={getUserAvatar(user.username)} />
         <div className="flex flex-col">
-          <Text weight="3">{user.username}</Text>
-          <Text weight="3">{user.balance}</Text>
+          <Typography variant={"h5"}>{user.username}</Typography>
+          <Typography variant={"h5"}>{user.balance}</Typography>
         </div>
       </div>
-      <Text weight="2">{userPosition}</Text>
+      <Typography variant={"h5"}>{userPosition}</Typography>
     </div>
   );
 });

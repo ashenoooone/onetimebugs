@@ -8,6 +8,7 @@ import {
 } from "react";
 import Duck from "@/shared/assets/duck_cry.png";
 import { Button, Text } from "@telegram-apps/telegram-ui";
+import { Typography } from "./typography";
 
 export interface ErrorBoundaryProps extends PropsWithChildren {
   fallback?: ReactNode | ComponentType<{ error: unknown }>;
@@ -20,13 +21,13 @@ interface ErrorBoundaryState {
 export const ErrorBoundaryError: FC<{ error: unknown }> = ({ error }) => (
   <div className="w-full h-screen flex items-center justify-center flex-col">
     <img src={Duck} alt="Crying duck :(" className="w-32" />
-    <Text className="text-special-red font-bold">
+    <Typography variant={"h5"} className="text-special-red font-bold">
       {error instanceof Error
         ? error.message
         : typeof error === "string"
         ? error
         : JSON.stringify(error)}
-    </Text>
+    </Typography>
   </div>
 );
 

@@ -1,7 +1,7 @@
 import { cn } from "@/shared/utils";
 import React, { ReactNode } from "react";
 import { appStore } from "../model/app.store";
-import { Loader } from "@/shared/components/loader";
+import { Loader } from "@/shared/ui/loader.tsx";
 
 type AppStateProps = {
   children: ReactNode;

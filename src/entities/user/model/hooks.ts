@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { UserApi } from "./user.api";
 import { retrieveLaunchParams } from "@telegram-apps/sdk-react";
-import { Loader } from "@/shared/components/loader";
+import { Loader } from "@/shared/ui/loader.tsx";
 
 const ME_KEY = "ME";
 const ME_STALE_TIME = 60 * 1000;

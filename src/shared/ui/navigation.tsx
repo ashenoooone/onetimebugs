@@ -3,6 +3,7 @@ import React from "react";
 import { FixedLayout, Text } from "@telegram-apps/telegram-ui";
 import { useLocation } from "react-router-dom";
 import { Link } from "./Link/Link.tsx";
+import { Typography } from "./typography.tsx";
 
 export const Navigation = React.memo(() => {
   const location = useLocation();
@@ -23,7 +24,7 @@ export const Navigation = React.memo(() => {
             className="flex flex-col gap-1 items-center w-max"
           >
             {r.icon}
-            <Text weight="3">{r.title}</Text>
+            <Typography>{r.title}</Typography>
           </Link>
         );
       })}

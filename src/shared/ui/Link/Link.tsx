@@ -3,7 +3,7 @@ import { type FC, type MouseEventHandler, useCallback } from "react";
 import { Link as RouterLink, type LinkProps } from "react-router-dom";
 
 import "./Link.css";
-import { cn } from "@/shared/utils/cn";
+import { cn } from "@/shared/utils/cn.ts";
 
 export const Link: FC<
   LinkProps & {

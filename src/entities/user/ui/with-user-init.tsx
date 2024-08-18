@@ -1,7 +1,7 @@
 import { retrieveLaunchParams } from "@telegram-apps/sdk-react";
 import React, { ReactNode, useEffect } from "react";
 import { useGetMe } from "../model/hooks";
-import { Loader } from "@/shared/components/loader";
+import { Loader } from "@/shared/ui/loader.tsx";
 import { appStore } from "@/app";
 import { userStore } from "../model/user.store";
 
