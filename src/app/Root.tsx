@@ -2,27 +2,15 @@ import { SDKProvider, useLaunchParams } from "@telegram-apps/sdk-react";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { type FC, useEffect, useMemo } from "react";
 
-import { ErrorBoundary } from "@/shared/components/ErrorBoundary.tsx";
+import {
+  ErrorBoundary,
+  ErrorBoundaryError,
+} from "@/shared/components/ErrorBoundary.tsx";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { App } from "./App";
 import { AppState } from "./ui/app-state";
 
 const queryClient = new QueryClient();
-
-const ErrorBoundaryError: FC<{ error: unknown }> = ({ error }) => (
-  <div>
-    <p>An unhandled error occurred:</p>
-    <blockquote>
-      <code>
-        {error instanceof Error
-          ? error.message
-          : typeof error === "string"
-          ? error
-          : JSON.stringify(error)}
-      </code>
-    </blockquote>
-  </div>
-);
 
 const Inner: FC = () => {
   const debug = useLaunchParams().startParam === "debug";
