@@ -67,7 +67,7 @@ export const LeaderBoardPage = React.memo((props: LeaderBoardPageProps) => {
   const { data, isFetching, isError } = useGetLeaderboard();
 
   if (isFetching) {
-    return <Loader centered imageStyles="w-20 h-20" />;
+    return <Loader centered />;
   }
 
   if (isError || !data) {

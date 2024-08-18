@@ -16,8 +16,7 @@ export const Loader = React.memo((props: LoaderProps) => {
     // todo анимация для появления и скрытия при моде фулскрин
     <div
       className={cn(className, {
-        "w-full h-full flex items-center justify-center":
-          centered && !fullScreen,
+        "fixed inset-0 flex items-center justify-center": centered,
         "fixed inset-0 flex items-center justify-center bg-bg-primary z-50":
           fullScreen,
       })}
