@@ -3,6 +3,6 @@ import { LeaderboardType } from "./types";
 
 export class LeaderboardApi {
   static async getLeaderBoard() {
-    return $api.get<LeaderboardType>("leaderboard");
+    return $api.get<LeaderboardType>("leaderboards");
   }
 }

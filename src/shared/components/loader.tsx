@@ -1,23 +1,33 @@
 import { cn } from "@/shared/utils";
 import React from "react";
-import Duck from "@/shared/assets/duck_vietnam.webp";
+import Duck from "@/shared/assets/duck_loading.png";
 
 type LoaderProps = {
   className?: string;
   imageStyles?: string;
   centered?: boolean;
+  size?: number;
+  fullScreen?: boolean;
 };
 
 export const Loader = React.memo((props: LoaderProps) => {
-  const { className, imageStyles, centered } = props;
+  const { className, size = 100, imageStyles, fullScreen, centered } = props;
   return (
+    // todo анимация для появления и скрытия при моде фулскрин
     <div
       className={cn(className, {
-        "w-full h-full translate-y-full top-1/2 flex items-center justify-center":
-          centered,
+        "w-full h-full flex items-center justify-center":
+          centered && !fullScreen,
+        "fixed inset-0 flex items-center justify-center bg-bg-primary z-50":
+          fullScreen,
       })}
     >
-      <img src={Duck} alt="duck" className={cn(imageStyles)} />
+      <img
+        style={{ width: size, height: size }}
+        src={Duck}
+        alt="duck"
+        className={cn(imageStyles, "animate-bounce duration-1000")}
+      />
     </div>
   );
 });

@@ -5,6 +5,7 @@ import { type FC, useEffect, useMemo } from "react";
 import { ErrorBoundary } from "@/shared/components/ErrorBoundary.tsx";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { App } from "./App";
+import { AppState } from "./ui/app-state";
 
 const queryClient = new QueryClient();
 
@@ -39,7 +40,9 @@ const Inner: FC = () => {
   return (
     <TonConnectUIProvider manifestUrl={manifestUrl}>
       <SDKProvider acceptCustomStyles debug={debug}>
-        <App />
+        <AppState>
+          <App />
+        </AppState>
       </SDKProvider>
     </TonConnectUIProvider>
   );

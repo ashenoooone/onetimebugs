@@ -1,5 +1,7 @@
 import axios from "axios";
 import { LOCAL_STORAGE_USER } from "../consts";
+import { MeType, UserStoreType } from "@/entities/user";
+import { userStore } from "@/entities/user/model/user.store";
 
 export const baseUrl = "https://api.onetimeduck.xyz/";
 
@@ -11,9 +13,19 @@ $api.interceptors.request.use((config) => {
   const cookieToken = localStorage.getItem(LOCAL_STORAGE_USER);
 
   if (cookieToken) {
-    // TODO ПАРСИНГ ТОКЕНА
-    // const parsedTokens = JSON.parse(cookieToken) as TokensResponseType;
-    // config.headers.Authorization = `${parsedTokens.type} ${parsedTokens.accessToken}`;
+    const meState = localStorage.getItem(LOCAL_STORAGE_USER);
+    if (meState) {
+      // парсим токен юзера из локального хранилища
+      const meParsed = JSON.parse(meState) as {
+        state: UserStoreType;
+      };
+
+      const hasQueryParams = config.url?.includes("?");
+      // если у нас уже есть квери параметры то добавляем через & иначе через ?
+      config.url += `${hasQueryParams ? "&" : "?"}magicLink=${
+        meParsed.state.me?.magicLink
+      }`;
+    }
   }
 
   return config;

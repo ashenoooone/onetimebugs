@@ -25,28 +25,30 @@ if (import.meta.env.DEV) {
   }
 
   if (shouldMock) {
-    const initDataRaw = new URLSearchParams([
-      [
-        "user",
-        JSON.stringify({
-          id: 99281932,
-          first_name: "Andrew",
-          last_name: "Rogue",
-          username: "rogue",
-          language_code: "en",
-          is_premium: true,
-          allows_write_to_pm: true,
-        }),
-      ],
-      [
-        "hash",
-        "89d6079ad6762351f38c6dbbc41bb53048019256a9443988af7a48bcad16ba31",
-      ],
-      ["auth_date", "1716922846"],
-      ["start_param", "debug"],
-      ["chat_type", "sender"],
-      ["chat_instance", "8428209589180549439"],
-    ]).toString();
+    const initDataRaw =
+      "query_id=AAGibjY4AAAAAKJuNjj9qMMT&user=%7B%22id%22%3A943091362%2C%22first_name%22%3A%22%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD%22%2C%22last_name%22%3A%22%D0%93%D0%BE%D0%BD%D1%82%D0%B0%D1%80%D1%8C%22%2C%22username%22%3A%22ashenoooone%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1723919713&hash=25b5e822f177bf93214fe5c04aca151262b7ecce56abe4165185cde28045ba8c";
+    // const initDataRaw = new URLSearchParams([
+    //   [
+    //     "user",
+    //     JSON.stringify({
+    //       id: 99281932,
+    //       first_name: "Andrew",
+    //       last_name: "Rogue",
+    //       username: "rogue",
+    //       language_code: "en",
+    //       is_premium: true,
+    //       allows_write_to_pm: true,
+    //     }),
+    //   ],
+    //   [
+    //     "hash",
+    //     "89d6079ad6762351f38c6dbbc41bb53048019256a9443988af7a48bcad16ba31",
+    //   ],
+    //   ["auth_date", "1716922846"],
+    //   ["start_param", "debug"],
+    //   ["chat_type", "sender"],
+    //   ["chat_instance", "8428209589180549439"],
+    // ]).toString();
 
     mockTelegramEnv({
       themeParams: {
