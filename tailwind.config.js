@@ -69,9 +69,11 @@ export default {
       },
       maxWidth: {
         "mx-container": "900px",
+        content: "500px",
       },
       width: {
         "mx-container": "900px",
+        content: "500px",
       },
     },
   },

@@ -13,7 +13,7 @@ export const Leaderboard = React.memo((props: LeaderboardProps) => {
   const { className, leaderboard } = props;
 
   return (
-    <div className={cn("max-w-[500px] w-full", className)}>
+    <div className={cn("max-w-content w-full", className)}>
       <LeaderboardHeader leaderboard={leaderboard} />
       <div className="flex flex-col gap-4 mt-4">
         {leaderboard.users.map((user) => {
