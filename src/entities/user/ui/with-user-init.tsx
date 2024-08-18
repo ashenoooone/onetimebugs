@@ -26,7 +26,6 @@ export const WithUserInit = React.memo((props: WithUserInitProps) => {
 
   useEffect(() => {
     if (isSuccess && data) {
-      console.log(data);
       setUser(user);
     }
   }, [isSuccess, data]);

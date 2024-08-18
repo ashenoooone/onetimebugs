@@ -12,6 +12,8 @@ const userStoreBase = createStore<UserStoreType>()(
       setMe: (me) =>
         set((state) => {
           state.me = me;
+          console.log(me, state);
+          return state;
         }),
     })),
     {
