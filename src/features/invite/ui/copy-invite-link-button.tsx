@@ -16,7 +16,7 @@ export const CopyInviteLinkButton = React.memo(
 
     const handleCopyInviteLinkClick = useCallback(() => {
       const link = userId
-        ? `${TELEGRAM_BOT_LINK}/join?startapp=${userId}`
+        ? `${TELEGRAM_BOT_LINK}?startapp=${userId}`
         : TELEGRAM_BOT_LINK;
 
       navigator.clipboard.writeText(link).then(() => {

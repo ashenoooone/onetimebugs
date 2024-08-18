@@ -16,7 +16,7 @@ export const InviteUserButton = React.memo((props: InviteUserButtonProps) => {
 
   const handlerInviteClick = useCallback(() => {
     if (userId !== undefined) {
-      utils.shareURL(`${TELEGRAM_BOT_LINK}/join?startapp=${userId}`);
+      utils.shareURL(`${TELEGRAM_BOT_LINK}?startapp=${userId}`);
     } else {
       utils.shareURL(TELEGRAM_BOT_LINK);
     }
