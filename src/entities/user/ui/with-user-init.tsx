@@ -13,7 +13,6 @@ export const WithUserInit = React.memo((props: WithUserInitProps) => {
   const { children } = props;
   const setAppState = appStore.use.setAppState();
   const setAppErrorMessage = appStore.use.setErrorMessage();
-  const user = userStore.use.me();
   const setUser = userStore.use.setMe();
 
   // берем параметры из старта
@@ -26,7 +25,7 @@ export const WithUserInit = React.memo((props: WithUserInitProps) => {
 
   useEffect(() => {
     if (isSuccess && data) {
-      setUser(user);
+      setUser(data);
     }
   }, [isSuccess, data]);
 
