@@ -3,6 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      padding: {
+        navbar: "80px",
+      },
+      height: {
+        navbar: "80px",
+      },
       colors: {
         // other
         "special-yellow": "#FFB649",

@@ -11,8 +11,6 @@ type WithUserInitProps = {
 
 export const WithUserInit = React.memo((props: WithUserInitProps) => {
   const { children } = props;
-  const setAppState = appStore.use.setAppState();
-  const setAppErrorMessage = appStore.use.setErrorMessage();
   const setUser = userStore.use.setMe();
 
   // берем параметры из старта

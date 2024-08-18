@@ -10,22 +10,23 @@ export const Navigation = React.memo(() => {
   const currentPathname = location.pathname;
 
   return (
-    <FixedLayout vertical="bottom" className="px-5 py-3 bg-bg-primary">
-      <div className="flex justify-between max-w-mx-container mx-auto">
-        {routes.map((r) => {
-          return (
-            <Link
-              active={currentPathname === r.path}
-              key={r.path}
-              to={r.path}
-              className="flex flex-col gap-1 items-center w-max"
-            >
-              {r.icon}
-              <Text weight="3">{r.title}</Text>
-            </Link>
-          );
-        })}
-      </div>
+    <FixedLayout
+      vertical="bottom"
+      className="px-5 py-3 flex justify-between max-w-mx-container items-center mx-auto h-navbar bg-bg-primary"
+    >
+      {routes.map((r) => {
+        return (
+          <Link
+            active={currentPathname === r.path}
+            key={r.path}
+            to={r.path}
+            className="flex flex-col gap-1 items-center w-max"
+          >
+            {r.icon}
+            <Text weight="3">{r.title}</Text>
+          </Link>
+        );
+      })}
     </FixedLayout>
   );
 });
