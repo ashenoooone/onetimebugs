@@ -28,10 +28,7 @@ export const FriendsPage = React.memo(() => {
 
   return (
     <Page className={cn("")}>
-      <Typography variant={"h4"}>
-        Friends {data?.totalFriends}
-        <LargeTitle>Friends {data?.totalFriends}</LargeTitle>
-      </Typography>
+      <Typography variant={"h4"}>Friends {data?.totalFriends}</Typography>
       <Subheadline weight="2" className="text-center text-text-secondary mb-4">
         Invite friends <br /> to get spins and tokens
       </Subheadline>
