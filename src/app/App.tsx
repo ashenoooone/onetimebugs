@@ -27,6 +27,18 @@ export const App: FC = () => {
   const miniApp = useMiniApp();
   const viewport = useViewport();
 
+  // Create a new application navigator and attach it to the browser history, so it could modify
+  // it and listen to its changes.
+  const navigator = useMemo(() => initNavigator("app-navigation-state"), []);
+  const [location, reactNavigator] = useIntegration(navigator);
+
+  // Don't forget to attach the navigator to allow it to control the BackButton state as well
+  // as browser history.
+  useEffect(() => {
+    navigator.attach();
+    return () => navigator.detach();
+  }, [navigator]);
+
   useEffect(() => {
     return viewport && bindViewportCSSVars(viewport);
   }, [viewport]);
@@ -41,7 +53,7 @@ export const App: FC = () => {
       appearance={miniApp.isDark ? "dark" : "light"}
       platform={["macos", "ios"].includes(lp.platform) ? "ios" : "base"}
     >
-      <BrowserRouter>
+      <Router location={location} navigator={reactNavigator}>
         <TransitionGroup>
           <CSSTransition classNames="fade" timeout={300} exit={false}>
             <Routes location={location}>
@@ -53,7 +65,7 @@ export const App: FC = () => {
           </CSSTransition>
         </TransitionGroup>
         <Navigation />
-      </BrowserRouter>
+      </Router>
     </AppRoot>
   );
 };

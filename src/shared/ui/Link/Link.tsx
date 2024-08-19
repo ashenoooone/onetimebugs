@@ -44,6 +44,7 @@ export const Link: FC<
     <RouterLink
       {...rest}
       to={to}
+      replace
       onClick={onClick}
       className={cn("link", className, {
         [`text-special-yellow`]: active,
