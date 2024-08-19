@@ -14,3 +14,7 @@ export type TaskType = {
 export const isTaskSubscribe = (task: TaskType) => {
   return task.type === "subscribe";
 };
+
+export type PatchTaskTypeParams = {
+  taskId: number;
+};

@@ -5,6 +5,7 @@ import { Typography } from "@/shared/ui/typography";
 import { CircleCheck } from "lucide-react";
 import { Button } from "@/shared/ui/button";
 import { initUtils } from "@telegram-apps/sdk-react";
+import { usePatchTask } from "../model/hooks";
 
 type TaskProps = {
   className?: string;
@@ -13,8 +14,11 @@ type TaskProps = {
 
 export const Task = React.memo((props: TaskProps) => {
   const { className, task } = props;
+  const patchTask = usePatchTask({
+    taskId: task.id,
+  }).mutateAsync;
 
-  //   todo возможно следует разбить на несколько компонентов
+  // todo возможно следует разбить на несколько компонентов
   const utils = initUtils();
 
   const handleOpenLink = useCallback(
@@ -24,6 +28,9 @@ export const Task = React.memo((props: TaskProps) => {
       } else {
         utils.openLink(link);
       }
+      setTimeout(async () => {
+        await patchTask();
+      }, 3000);
     },
     []
   );
@@ -45,9 +52,6 @@ export const Task = React.memo((props: TaskProps) => {
         <Typography variant={"body-1"}>
           Reward: {task.reward} Ducks{" "}
           {task.maxCount > 1 && `(${task.count}/${task.maxCount})`}
-        </Typography>
-        <Typography variant={"caption"} className="text-text-secondary">
-          {task.isClaimed ? "Completed" : "Not completed"}
         </Typography>
       </div>
       {task.isClaimed ? (
