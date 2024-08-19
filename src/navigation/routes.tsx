@@ -1,7 +1,13 @@
 import type { ComponentType, JSX } from "react";
 
 import { IndexPage } from "@/pages/IndexPage/IndexPage";
-import { ClipboardCheck, House, Trophy, UsersRound } from "lucide-react";
+import {
+  ClipboardCheck,
+  Gamepad2,
+  House,
+  Trophy,
+  UsersRound,
+} from "lucide-react";
 import { FriendsPage } from "@/pages/friends";
 import { LeaderBoardPage } from "@/pages/leaderboard";
 import { TasksPage } from "@/pages/tasks";
@@ -11,6 +17,7 @@ export interface Route {
   Component: ComponentType;
   title?: string;
   icon?: JSX.Element;
+  styles?: string;
 }
 
 export const routes: Route[] = [
@@ -20,6 +27,13 @@ export const routes: Route[] = [
     Component: TasksPage,
     title: "Tasks",
     icon: <ClipboardCheck />,
+  },
+  {
+    path: "/game",
+    Component: LeaderBoardPage,
+    title: "Game",
+    icon: <Gamepad2 />,
+    styles: "",
   },
   {
     path: "/leaders",
