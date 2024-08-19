@@ -13,36 +13,7 @@ import {
 import { InviteUserButton, CopyInviteLinkButton } from "@/features/invite";
 import { userStore } from "@/entities/user/model/user.store";
 
-type FriendsPageProps = {
-  className?: string;
-};
-
-const TEST_DATA = {
-  totalFriends: 3,
-  friend: [
-    {
-      telegramId: 2,
-      username: "Bot#2",
-      scores: 200,
-      tickets: 1,
-    },
-    {
-      telegramId: 3,
-      username: "Bot#3",
-      scores: 100,
-      tickets: 1,
-    },
-    {
-      telegramId: 4,
-      username: "Bot#4",
-      scores: 100,
-      tickets: 1,
-    },
-  ],
-};
-
-export const FriendsPage = React.memo((props: FriendsPageProps) => {
-  const { className } = props;
+export const FriendsPage = React.memo(() => {
   const { data, isError, isFetching } = useGetFriends();
   const user = userStore.use.me();
 
@@ -55,7 +26,7 @@ export const FriendsPage = React.memo((props: FriendsPageProps) => {
   }
 
   return (
-    <Page className={cn("", className)}>
+    <Page className={cn("")}>
       <Title weight="1">
         <LargeTitle>Friends {data?.totalFriends}</LargeTitle>
       </Title>
@@ -69,7 +40,7 @@ export const FriendsPage = React.memo((props: FriendsPageProps) => {
       </div>
       <FriendsList
         className="mt-4 max-w-content w-full"
-        friends={TEST_DATA?.friend ?? []}
+        friends={data?.friend ?? []}
       />
     </Page>
   );
