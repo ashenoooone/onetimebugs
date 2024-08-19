@@ -34,7 +34,7 @@ export const App: FC = () => {
   useEffect(() => {
     miniApp.setHeaderColor("#141414");
     miniApp.setBgColor("#141414");
-  }, []);
+  }, [miniApp]);
 
   return (
     <AppRoot
