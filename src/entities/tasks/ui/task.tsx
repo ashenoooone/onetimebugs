@@ -5,7 +5,7 @@ import { Typography } from "@/shared/ui/typography";
 import { CircleCheck } from "lucide-react";
 import { Button } from "@/shared/ui/button";
 import { initUtils } from "@telegram-apps/sdk-react";
-import { usePatchTask } from "../model/hooks";
+import { usePostTask } from "../model/hooks";
 
 type TaskProps = {
   className?: string;
@@ -14,7 +14,7 @@ type TaskProps = {
 
 export const Task = React.memo((props: TaskProps) => {
   const { className, task } = props;
-  const patchTask = usePatchTask({
+  const postTask = usePostTask({
     taskId: task.id,
   }).mutateAsync;
 
@@ -29,7 +29,7 @@ export const Task = React.memo((props: TaskProps) => {
         utils.openLink(link);
       }
       setTimeout(async () => {
-        await patchTask();
+        await postTask();
       }, 3000);
     },
     []
