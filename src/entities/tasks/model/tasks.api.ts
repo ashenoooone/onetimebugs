@@ -1,5 +1,5 @@
 import { $api } from "@/shared/api";
-import {PostTaskTypeParams, TaskType} from "./types";
+import { PostTaskTypeParams, TaskType } from "./types";
 
 export class TasksApi {
   static async getTasks() {
@@ -7,6 +7,6 @@ export class TasksApi {
   }
 
   static async postTask(params: PostTaskTypeParams) {
-    return $api.post(`tasks?taskId=${params.taskId}`);
+    return $api.post(`tasks/complete?taskId=${params.taskId}`);
   }
 }
