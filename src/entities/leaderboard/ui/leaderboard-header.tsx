@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { LeaderboardType } from "../model/types";
 import { Headline, Title, Subheadline } from "@telegram-apps/telegram-ui";
 import TrophyImg from "@/shared/assets/trophy.png";
+import { Typography } from "@/shared/ui/typography";
 
 type LeaderboardHeaderProps = {
   leaderboard: LeaderboardType;
@@ -26,13 +27,13 @@ export const LeaderboardHeader = React.memo((props: LeaderboardHeaderProps) => {
   return (
     <div className="flex flex-col items-center">
       <img src={TrophyImg} alt="Трофей" className="w-24 h-24" />
-      <Title weight="1" level="1">
+      <Typography variant={"h4"} className="font-bold">
         Leaderboard
-      </Title>
-      <Headline weight="2">Your position is {userPosition}</Headline>
-      <Subheadline weight="2">
+      </Typography>
+      <Typography variant={"h6"}>Your position is {userPosition}</Typography>
+      <Typography variant={"h6"}>
         Total users: {leaderboard.totalUsers}
-      </Subheadline>
+      </Typography>
     </div>
   );
 });
