@@ -12,6 +12,7 @@ import {
 } from "@telegram-apps/telegram-ui";
 import { InviteUserButton, CopyInviteLinkButton } from "@/features/invite";
 import { userStore } from "@/entities/user/model/user.store";
+import { Typography } from "@/shared/ui/typography";
 
 export const FriendsPage = React.memo(() => {
   const { data, isError, isFetching } = useGetFriends();
@@ -27,9 +28,10 @@ export const FriendsPage = React.memo(() => {
 
   return (
     <Page className={cn("")}>
-      <Title weight="1">
+      <Typography variant={"h4"}>
+        Friends {data?.totalFriends}
         <LargeTitle>Friends {data?.totalFriends}</LargeTitle>
-      </Title>
+      </Typography>
       <Subheadline weight="2" className="text-center text-text-secondary mb-4">
         Invite friends <br /> to get spins and tokens
       </Subheadline>

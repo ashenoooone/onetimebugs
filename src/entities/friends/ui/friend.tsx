@@ -16,11 +16,11 @@ export const Friend = React.memo((props: FriendProps) => {
     <div className={cn("flex items-center justify-between", className)}>
       <div className="flex items-center">
         <Avatar size={48} src={getUserAvatar(item.username)} className="mr-3" />
-        <Typography variant={"h5"}>{item.username}</Typography>
+        <Typography variant={"subtitle-1"}>{item.username}</Typography>
       </div>
       <div className="flex gap-1 flex-col">
-        <Typography variant={"h5"}>Points: {item.scores}</Typography>
-        <Typography variant={"h5"}>Tickets: {item.tickets}</Typography>
+        <Typography variant={"subtitle-1"}>Points: {item.scores}</Typography>
+        <Typography variant={"subtitle-1"}>Tickets: {item.tickets}</Typography>
       </div>
     </div>
   );

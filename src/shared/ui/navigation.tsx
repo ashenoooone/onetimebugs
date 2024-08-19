@@ -24,7 +24,7 @@ export const Navigation = React.memo(() => {
             className="flex flex-col gap-1 items-center w-max"
           >
             {r.icon}
-            <Typography>{r.title}</Typography>
+            <Typography variant={"h6"}>{r.title}</Typography>
           </Link>
         );
       })}

@@ -35,11 +35,11 @@ export const LeaderboardItem = React.memo((props: LeaderboardItemProps) => {
       <div className="flex gap-2 items-center">
         <Avatar size={48} src={getUserAvatar(user.username)} />
         <div className="flex flex-col">
-          <Typography variant={"h5"}>{user.username}</Typography>
-          <Typography variant={"h5"}>{user.balance}</Typography>
+          <Typography variant={"subtitle-1"}>{user.username}</Typography>
+          <Typography variant={"subtitle-1"}>{user.balance}</Typography>
         </div>
       </div>
-      <Typography variant={"h5"}>{userPosition}</Typography>
+      <Typography variant={"subtitle-1"}>{userPosition}</Typography>
     </div>
   );
 });
