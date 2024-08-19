@@ -16,6 +16,7 @@ export const Navigation = React.memo(() => {
       {routes.map((r) => {
         return (
           <Link
+            replace
             active={currentPathname === r.path}
             key={r.path}
             to={r.path}

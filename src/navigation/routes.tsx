@@ -1,6 +1,5 @@
 import type { ComponentType, JSX } from "react";
 
-import { IndexPage } from "@/pages/IndexPage/IndexPage";
 import {
   ClipboardCheck,
   Gamepad2,
@@ -11,6 +10,7 @@ import {
 import { FriendsPage } from "@/pages/friends";
 import { LeaderBoardPage } from "@/pages/leaderboard";
 import { TasksPage } from "@/pages/tasks";
+import { IndexPage } from "@/pages/IndexPage";
 
 export interface Route {
   path: string;
