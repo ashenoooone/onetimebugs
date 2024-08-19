@@ -11,10 +11,7 @@ export const Navigation = React.memo(() => {
   const currentPathname = location.pathname;
 
   return (
-    <FixedLayout
-      vertical="bottom"
-      className="p-5 flex justify-between max-w-mx-container items-center mx-auto h-navbar bg-bg-primary"
-    >
+    <div className="p-5 fixed w-full left-0 right-0 bottom-0 flex justify-between max-w-mx-container items-center mx-auto h-navbar bg-bg-primary">
       {routes.map((r) => {
         return (
           <Link
@@ -28,7 +25,7 @@ export const Navigation = React.memo(() => {
           </Link>
         );
       })}
-    </FixedLayout>
+    </div>
   );
 });
 
