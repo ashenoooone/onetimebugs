@@ -13,7 +13,7 @@ export const Navigation = React.memo(() => {
   return (
     <FixedLayout
       vertical="bottom"
-      className="px-5 py-3 flex justify-between max-w-mx-container items-center mx-auto h-navbar bg-bg-primary"
+      className="p-5 flex justify-between max-w-mx-container items-center mx-auto h-navbar bg-bg-primary"
     >
       {routes.map((r) => {
         return (

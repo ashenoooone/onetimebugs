@@ -31,6 +31,11 @@ export const App: FC = () => {
     return viewport && bindViewportCSSVars(viewport);
   }, [viewport]);
 
+  useEffect(() => {
+    miniApp.setHeaderColor("#141414");
+    miniApp.setBgColor("#141414");
+  }, []);
+
   // // Create a new application navigator and attach it to the browser history, so it could modify
   // // it and listen to its changes.
   // const navigator = useMemo(() => initNavigator("app-navigation-state"), []);
