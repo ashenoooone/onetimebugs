@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Digital Numbers";
+  src: url("DigitalNumbers-Regular.eot");
+  src: url("DigitalNumbers-Regular.eot?#iefix") format("embedded-opentype"),
+    url("DigitalNumbers-Regular.woff2") format("woff2"),
+    url("DigitalNumbers-Regular.woff") format("woff"),
+    url("DigitalNumbers-Regular.ttf") format("truetype"),
+    url("DigitalNumbers-Regular.svg#DigitalNumbers-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

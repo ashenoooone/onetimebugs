@@ -11,6 +11,7 @@ import { FriendsPage } from "@/pages/friends";
 import { LeaderBoardPage } from "@/pages/leaderboard";
 import { TasksPage } from "@/pages/tasks";
 import { IndexPage } from "@/pages/IndexPage";
+import { GamePage } from "@/pages/game";
 
 export interface Route {
   path: string;
@@ -30,7 +31,7 @@ export const routes: Route[] = [
   },
   {
     path: "/game",
-    Component: LeaderBoardPage,
+    Component: GamePage,
     title: "Game",
     icon: <Gamepad2 />,
     styles: "",
