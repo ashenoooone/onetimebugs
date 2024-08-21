@@ -1,5 +1,6 @@
 import { Game, Timer } from "@/entities/game";
 import { gameStore } from "@/entities/game/model/game.store";
+import { WithUserInit } from "@/entities/user";
 import { userStore } from "@/entities/user/model/user.store";
 import { Page } from "@/shared/ui/page";
 import { cn } from "@/shared/utils";
@@ -20,14 +21,16 @@ export const GamePage = React.memo((props: GamePageProps) => {
   }
 
   return (
-    <Page className={cn("", className)}>
-      <Countdown
-        date={Date.now() + (magicNumber || 10) * 1000}
-        precision={3}
-        intervalDelay={0}
-        renderer={(props) => <Game time={props} />}
-      />
-    </Page>
+    <WithUserInit>
+      <Page className={cn("", className)}>
+        <Countdown
+          date={Date.now() + (magicNumber || 10) * 1000}
+          precision={3}
+          intervalDelay={0}
+          renderer={(props) => <Game time={props} />}
+        />
+      </Page>
+    </WithUserInit>
   );
 });
 

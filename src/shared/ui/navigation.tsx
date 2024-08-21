@@ -12,7 +12,7 @@ export const Navigation = React.memo(() => {
   const currentPathname = location.pathname;
 
   return (
-    <div className="p-5 fixed w-full left-0 right-0 bottom-0 flex justify-between max-w-mx-container items-center mx-auto h-navbar bg-bg-primary">
+    <div className="p-5 fixed w-full left-0 right-0 bottom-0 grid grid-cols-5 max-w-mx-container mx-auto h-navbar bg-bg-primary">
       {routes.map((r) => {
         return (
           <Link
@@ -20,7 +20,10 @@ export const Navigation = React.memo(() => {
             active={currentPathname === r.path}
             key={r.path}
             to={r.path}
-            className={cn("flex flex-col gap-1 items-center w-max", r.styles)}
+            className={cn(
+              "flex mx-auto flex-col gap-1 items-center w-max",
+              r.styles
+            )}
           >
             {r.icon}
             <Typography variant={"body-1"}>{r.title}</Typography>

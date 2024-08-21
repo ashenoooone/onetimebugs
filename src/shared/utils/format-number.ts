@@ -4,5 +4,5 @@ const format = new Intl.NumberFormat("en-US", {
 });
 
 export const formatNumber = (number: number) => {
-  return format.format(number).replace(",", " ");
+  return format.format(number).replace(/,/g, " ");
 };

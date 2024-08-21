@@ -12,6 +12,7 @@ export type MeType = {
   magicLink: string;
   rank: number;
   username: string;
+  tickets: number;
 };
 
 export type UserStoreType = {

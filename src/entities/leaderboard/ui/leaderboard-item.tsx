@@ -4,6 +4,7 @@ import { LeaderBoardUserType } from "../model/types";
 import { Avatar, Text } from "@telegram-apps/telegram-ui";
 import { getUserAvatar } from "@/entities/user/model/utils";
 import { Typography } from "@/shared/ui/typography";
+import { formatNumber } from "@/shared/utils/format-number";
 
 type LeaderboardItemProps = {
   user: LeaderBoardUserType;
@@ -36,7 +37,9 @@ export const LeaderboardItem = React.memo((props: LeaderboardItemProps) => {
         <Avatar size={48} src={getUserAvatar(user.username)} />
         <div className="flex flex-col">
           <Typography variant={"subtitle-1"}>{user.username}</Typography>
-          <Typography variant={"subtitle-1"}>{user.balance}</Typography>
+          <Typography variant={"subtitle-1"}>
+            {formatNumber(user.balance)}
+          </Typography>
         </div>
       </div>
       <Typography variant={"subtitle-1"}>{userPosition}</Typography>
