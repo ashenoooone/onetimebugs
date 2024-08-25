@@ -17,9 +17,19 @@ export const IndexPage: FC = () => {
         <TonConnectButton className="ton-connect-page__button-connected" />
         <img src={logo} alt="logo" className="w-52" />
         {user && (
-          <Typography className="font-bold" variant={"h4"}>
-            {formatNumber(user.balance)}
-          </Typography>
+          <div>
+            <div className="flex flex-col items-center">
+              <Typography className="font-bold" variant={"h4"}>
+                {formatNumber(user.balance)}
+              </Typography>
+              <Typography className="text-text-secondary" variant={"h6"}>
+                $DUCKS
+              </Typography>
+            </div>
+            <Typography className="mt-2" variant={"h6"}>
+              Tickets: {user.tickets} 🎟
+            </Typography>
+          </div>
         )}
       </Page>
     </WithUserInit>
