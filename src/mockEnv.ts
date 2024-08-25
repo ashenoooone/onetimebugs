@@ -26,7 +26,7 @@ if (import.meta.env.DEV) {
 
   if (shouldMock) {
     const initDataRaw =
-      "query_id=AAGibjY4AAAAAKJuNjj9qMMT&user=%7B%22id%22%3A943091362%2C%22first_name%22%3A%22%D0%A0%D0%BE%D0%BC%D0%B0%D0%BD%22%2C%22last_name%22%3A%22%D0%93%D0%BE%D0%BD%D1%82%D0%B0%D1%80%D1%8C%22%2C%22username%22%3A%22ashenoooone%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1723919713&hash=25b5e822f177bf93214fe5c04aca151262b7ecce56abe4165185cde28045ba8c";
+      "query_id=AAGL8vYXAAAAAIvy9heZyZp1&user=%7B%22id%22%3A402059915%2C%22first_name%22%3A%22%D0%98%D0%BB%D1%8C%D0%B4%D0%B0%D1%80%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22wilidon%22%2C%22language_code%22%3A%22en%22%2C%22is_premium%22%3Atrue%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1724577522&hash=c8a50ab1e9402c28496f775b952c70eaa1fc0cc24ea60f67e579ac7a7a0db594";
     // const initDataRaw = new URLSearchParams([
     //   [
     //     "user",
