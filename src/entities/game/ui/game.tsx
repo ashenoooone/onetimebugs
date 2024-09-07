@@ -30,10 +30,7 @@ export const Game = (props: GameProps) => {
 
   return (
     <div
-      className={cn(
-        "flex justify-center flex-col gap-3 items-center",
-        className
-      )}
+      className={cn("absolute bottom-1/2 left-1/2 -translate-x-1/2", className)}
     >
       {gameStatus === "inGame" && magicNumber && (
         <Timer magicNumber={magicNumber} time={time} />

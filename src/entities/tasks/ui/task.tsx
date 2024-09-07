@@ -1,11 +1,12 @@
 import { cn } from "@/shared/utils";
-import React, { useCallback, useMemo } from "react";
-import { TaskType } from "../model/types";
+import React, { useCallback, useMemo, useState } from "react";
+import { isTaskSubscribe, TaskType } from "../model/types";
 import { Typography } from "@/shared/ui/typography";
 import { CircleCheck } from "lucide-react";
 import { Button } from "@/shared/ui/button";
 import { initUtils } from "@telegram-apps/sdk-react";
 import { usePostTask } from "../model/hooks";
+import { Spinner } from "@/shared/ui/spinner";
 
 type TaskProps = {
   className?: string;
@@ -14,6 +15,9 @@ type TaskProps = {
 
 export const Task = React.memo((props: TaskProps) => {
   const { className, task } = props;
+
+  const [taskIsLoading, setTaskIsLoading] = useState(false);
+
   const postTask = usePostTask({
     taskId: task.id,
   }).mutateAsync;
@@ -23,13 +27,16 @@ export const Task = React.memo((props: TaskProps) => {
 
   const handleOpenLink = useCallback(
     (link: string) => () => {
+      setTaskIsLoading(true);
       if (link.startsWith("https://t.me")) {
         utils.openTelegramLink(link);
       } else {
         utils.openLink(link);
       }
       setTimeout(async () => {
-        await postTask();
+        await postTask().finally(() => {
+          setTaskIsLoading(false);
+        });
       }, 3000);
     },
     []
@@ -37,9 +44,19 @@ export const Task = React.memo((props: TaskProps) => {
 
   const action = useMemo(() => {
     if (task.type === "subscribe") {
-      return <Button onClick={handleOpenLink(task.link)}>Subscribe</Button>;
+      return (
+        <Button
+          className={cn({
+            "bg-special-green relative text-text-primary after:bg-white/40 after:content-[' '] after:absolute after:w-1/2 after:h-1/2 after:rounded-xl after:animate-ping overflow-hidden":
+              taskIsLoading,
+          })}
+          onClick={handleOpenLink(task.link)}
+        >
+          {taskIsLoading ? <Spinner /> : "Subscribe"}
+        </Button>
+      );
     }
-  }, []);
+  }, [taskIsLoading]);
 
   return (
     <div

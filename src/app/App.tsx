@@ -54,16 +54,18 @@ export const App: FC = () => {
       platform={["macos", "ios"].includes(lp.platform) ? "ios" : "base"}
     >
       <Router location={location} navigator={reactNavigator}>
-        <TransitionGroup>
-          <CSSTransition classNames="fade" timeout={300} exit={false}>
-            <Routes location={location}>
-              {routes.map((route) => (
-                <Route key={route.path} {...route} />
-              ))}
-              <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
-          </CSSTransition>
-        </TransitionGroup>
+        <div className="overflow-hidden">
+          <TransitionGroup>
+            <CSSTransition classNames="fade" timeout={300} exit={false}>
+              <Routes location={location}>
+                {routes.map((route) => (
+                  <Route key={route.path} {...route} />
+                ))}
+                <Route path="*" element={<Navigate to="/" />} />
+              </Routes>
+            </CSSTransition>
+          </TransitionGroup>
+        </div>
         <Navigation />
       </Router>
     </AppRoot>

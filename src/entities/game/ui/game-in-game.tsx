@@ -50,7 +50,7 @@ export const GameInGame = (props: GameInGameProps) => {
 
   return (
     <div className={cn("flex flex-col items-center gap-4", className)}>
-      <Typography variant={"h6"}>
+      <Typography variant={"h6"} className="mt-3">
         Your magic number is{" "}
         <span className="font-bold text-special-yellow">
           {startGame.data?.data.magicNumber}

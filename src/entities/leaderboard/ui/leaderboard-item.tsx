@@ -36,8 +36,10 @@ export const LeaderboardItem = React.memo((props: LeaderboardItemProps) => {
       <div className="flex gap-2 items-center">
         <Avatar size={48} src={getUserAvatar(user.username)} />
         <div className="flex flex-col">
-          <Typography variant={"subtitle-1"}>{user.username}</Typography>
-          <Typography variant={"subtitle-1"}>
+          <Typography variant={"subtitle-1"} className="font-bold">
+            {user.username}
+          </Typography>
+          <Typography variant={"subtitle-1"} className="text-text-secondary">
             {formatNumber(user.balance)}
           </Typography>
         </div>
