@@ -1,9 +1,8 @@
 import axios from "axios";
 import { LOCAL_STORAGE_USER } from "../consts";
-import { MeType, UserStoreType } from "@/entities/user";
-import { userStore } from "@/entities/user/model/user.store";
+import { UserStoreType } from "@/entities/user";
 
-export const baseUrl = "https://api.onetimeduck.xyz/";
+export const baseUrl = "https://api.onetimebugs.xyz/";
 
 export const $api = axios.create({
   baseURL: baseUrl,
