@@ -28,8 +28,8 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build . --tag ghcr.io/${{ github.actor }}/duck-web:latest
-        docker push ghcr.io/${{ github.actor }}/duck-web:latest
+        docker build . --tag ghcr.io/ashenoooone/duck-web:latest
+        docker push ghcr.io/ashenoooone/duck-web:latest
         
   deploy:
     runs-on: ubuntu-latest
@@ -48,10 +48,10 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
 
         script: |
-          docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-          docker pull ghcr.io/${{ github.actor }}/duck-web:latest
+          docker login ghcr.io -u ashenoooone -p ${{ secrets.GITHUB_TOKEN }}
+          docker pull ghcr.io/ashenoooone/duck-web:latest
           docker stop duck-web || true
           docker rm duck-web || true 
           docker run \
            --name duck-web -p 80:80 \
-           -d ghcr.io/${{ github.actor }}/duck-web:latest 
+           -d ghcr.io/ashenoooone/duck-web:latest 
