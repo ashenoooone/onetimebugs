@@ -42,7 +42,7 @@ export const IndexPage: FC = () => {
                 </Typography>
               </div>
               <Button
-                disabled={true}
+                disabled={user.tickets === 0}
                 variant={'green'}
                 className="rounded-none w-full flex flex-col"
               >
