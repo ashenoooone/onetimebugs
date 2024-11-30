@@ -3,10 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .shadow-text-custom-green {
+    text-shadow: 0px 0px 20px #43D18A;
+  }
+}
+
 body {
   padding: 0;
   margin: 0;
-  @apply bg-bg-primary text-text-primary;
+  @apply bg-bg-primary text-white font-default;
 }
 
 .fade-enter {

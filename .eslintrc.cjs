@@ -4,31 +4,32 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
   ],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: "script",
+        sourceType: 'script',
       },
     },
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["@typescript-eslint", "react"],
+  plugins: ['@typescript-eslint', 'react'],
   rules: {
-    "react/react-in-jsx-scope": 0,
-    "@typescript-eslint/no-unused-vars": 0,
-    "react/prop-types": 0,
-    "@typescript-eslint/no-explicit-any": 0,
+    'react/react-in-jsx-scope': 0,
+    '@typescript-eslint/no-unused-vars': 0,
+    'react/prop-types': 0,
+    '@typescript-eslint/no-explicit-any': 0,
   },
 };

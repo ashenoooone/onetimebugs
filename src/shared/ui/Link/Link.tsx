@@ -1,9 +1,9 @@
-import { useUtils } from "@telegram-apps/sdk-react";
-import { type FC, type MouseEventHandler, useCallback } from "react";
-import { Link as RouterLink, type LinkProps } from "react-router-dom";
+import { useUtils } from '@telegram-apps/sdk-react';
+import { type FC, type MouseEventHandler, useCallback } from 'react';
+import { Link as RouterLink, type LinkProps } from 'react-router-dom';
 
-import "./Link.css";
-import { cn } from "@/shared/utils/cn.ts";
+import './Link.css';
+import { cn } from '@/shared/utils/cn.ts';
 
 export const Link: FC<
   LinkProps & {
@@ -19,10 +19,10 @@ export const Link: FC<
       // Compute if target path is external. In this case we would like to open link using
       // TMA method.
       let path: string;
-      if (typeof to === "string") {
+      if (typeof to === 'string') {
         path = to;
       } else {
-        const { search = "", pathname = "", hash = "" } = to;
+        const { search = '', pathname = '', hash = '' } = to;
         path = `${pathname}?${search}#${hash}`;
       }
 
@@ -37,7 +37,7 @@ export const Link: FC<
         utils.openLink(targetUrl.toString());
       }
     },
-    [to, propsOnClick, utils]
+    [to, propsOnClick, utils],
   );
 
   return (
@@ -45,8 +45,8 @@ export const Link: FC<
       {...rest}
       to={to}
       onClick={onClick}
-      className={cn("link", className, {
-        [`text-special-yellow`]: active,
+      className={cn('text-text-secondary/60', className, {
+        [`text-text-primary`]: active,
       })}
     />
   );

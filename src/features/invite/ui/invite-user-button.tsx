@@ -1,8 +1,8 @@
-import { TELEGRAM_BOT_LINK } from "@/shared/consts";
-import { Button } from "@/shared/ui/button";
-import { cn } from "@/shared/utils";
-import { initUtils } from "@telegram-apps/sdk-react";
-import React, { useCallback } from "react";
+import { TELEGRAM_BOT_LINK } from '@/shared/consts';
+import { Button } from '@/shared/ui/button';
+import { cn } from '@/shared/utils';
+import { initUtils } from '@telegram-apps/sdk-react';
+import React, { useCallback } from 'react';
 
 type InviteUserButtonProps = {
   className?: string;
@@ -24,13 +24,13 @@ export const InviteUserButton = React.memo((props: InviteUserButtonProps) => {
 
   return (
     <Button
-      variant={"default"}
+      variant={'default'}
       onClick={handlerInviteClick}
-      className={cn("", className)}
+      className={cn('', className)}
     >
       Share invite link
     </Button>
   );
 });
 
-InviteUserButton.displayName = "InviteUserButton";
+InviteUserButton.displayName = 'InviteUserButton';

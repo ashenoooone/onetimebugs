@@ -1,5 +1,5 @@
-import { cn } from "@/shared/utils/cn.ts";
-import React, { ReactNode } from "react";
+import { cn } from '@/shared/utils/cn.ts';
+import React, { ReactNode } from 'react';
 
 type PageProps = {
   className?: string;
@@ -11,8 +11,8 @@ export const Page = React.memo((props: PageProps) => {
   return (
     <div
       className={cn(
-        "flex flex-col px-4 pt-4 pb-navbar overflow-y-auto max-w-mx-container mx-auto items-center w-full",
-        className
+        'flex flex-col px-4 pt-4 min-h-screen overflow-y-auto max-w-mx-container mx-auto items-center w-full',
+        className,
       )}
     >
       {children}
@@ -20,4 +20,4 @@ export const Page = React.memo((props: PageProps) => {
   );
 });
 
-Page.displayName = "Page";
+Page.displayName = 'Page';

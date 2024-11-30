@@ -1,4 +1,4 @@
-import type { ComponentType, JSX } from "react";
+import type { ComponentType, JSX } from 'react';
 
 import {
   ClipboardCheck,
@@ -6,15 +6,19 @@ import {
   House,
   Trophy,
   UsersRound,
-} from "lucide-react";
-import { FriendsPage } from "@/pages/friends";
-import { LeaderBoardPage } from "@/pages/leaderboard";
-import { TasksPage } from "@/pages/tasks";
-import { IndexPage } from "@/pages/IndexPage";
-import { GamePage } from "@/pages/game";
+} from 'lucide-react';
+import { FriendsPage } from '@/pages/friends';
+import { LeaderBoardPage } from '@/pages/leaderboard';
+import { TasksPage } from '@/pages/tasks';
+import { IndexPage } from '@/pages/IndexPage';
+import { GamePage } from '@/pages/game';
+import { Task } from '@/shared/icons/task';
+import { Cool } from '@/shared/icons/cool';
+import { Server } from '@/shared/icons/server';
+import { Award } from '@/shared/icons/award';
 
 export interface Route {
-  path: string;
+  path: '/' | '/tasks' | '/game' | '/leaders' | '/friends';
   Component: ComponentType;
   title?: string;
   icon?: JSX.Element;
@@ -22,30 +26,29 @@ export interface Route {
 }
 
 export const routes: Route[] = [
-  { path: "/", Component: IndexPage, title: "Home", icon: <House /> },
+  { path: '/', Component: IndexPage, title: 'Home', icon: <Server /> },
   {
-    path: "/tasks",
+    path: '/tasks',
     Component: TasksPage,
-    title: "Tasks",
-    icon: <ClipboardCheck />,
+    title: 'Tasks',
+    icon: <Task />,
   },
   {
-    path: "/game",
+    path: '/game',
     Component: GamePage,
-    title: "Game",
+    title: 'Game',
     icon: <Gamepad2 />,
-    styles: "",
   },
   {
-    path: "/leaders",
+    path: '/leaders',
     Component: LeaderBoardPage,
-    title: "Leaders",
-    icon: <Trophy />,
+    title: 'Leaders',
+    icon: <Award />,
   },
   {
-    path: "/friends",
+    path: '/friends',
     Component: FriendsPage,
-    title: "Friends",
-    icon: <UsersRound />,
+    title: 'Friends',
+    icon: <Cool />,
   },
 ];
