@@ -84,6 +84,7 @@ export default {
         'd-green-light': '#43D18A',
         'd-gray': '#797979',
         'd-green': '#43D18A',
+        'd-red': '#D14343',
         // other
         'special-yellow': '#FFB649',
         'special-green': '#25824F',

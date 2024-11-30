@@ -17,6 +17,8 @@ export const buttonVariants = cva(
           'text-text-accent border border-border-accent hover:bg-state-transparent-blue-hover focus:bg-state-transparent-blue-focused disabled:text-text-primary',
         transparent:
           'text-text-accent hover:bg-state-transparent-blue-hover focus:bg-state-transparent-blue-focused',
+        outline_green:
+          'border border-d-green rounded-none text-d-green hover:bg-d-green hover:text-black focus:ring-2 focus:ring-d-green transition-all',
       },
     },
     defaultVariants: {

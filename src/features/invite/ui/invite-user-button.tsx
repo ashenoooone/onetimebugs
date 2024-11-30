@@ -1,4 +1,5 @@
 import { TELEGRAM_BOT_LINK } from '@/shared/consts';
+import { Share } from '@/shared/icons/share';
 import { Button } from '@/shared/ui/button';
 import { cn } from '@/shared/utils';
 import { initUtils } from '@telegram-apps/sdk-react';
@@ -24,10 +25,11 @@ export const InviteUserButton = React.memo((props: InviteUserButtonProps) => {
 
   return (
     <Button
-      variant={'default'}
+      variant={'outline_green'}
       onClick={handlerInviteClick}
-      className={cn('', className)}
+      className={cn('flex items-center gap-2', className)}
     >
+      <Share />
       Share invite link
     </Button>
   );

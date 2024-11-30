@@ -1,12 +1,11 @@
-import { FriendsList, useGetFriends } from "@/entities/friends";
-import { Loader } from "@/shared/ui/loader.tsx";
-import { cn } from "@/shared/utils";
-import React from "react";
-import MomDuck from "@/shared/assets/duck_mom.png";
-import { Page } from "@/shared/ui/page.tsx";
-import { InviteUserButton, CopyInviteLinkButton } from "@/features/invite";
-import { userStore } from "@/entities/user/model/user.store";
-import { Typography } from "@/shared/ui/typography";
+import { FriendsList, useGetFriends } from '@/entities/friends';
+import { Loader } from '@/shared/ui/loader.tsx';
+import { cn } from '@/shared/utils';
+import React from 'react';
+import { Page } from '@/shared/ui/page.tsx';
+import { InviteUserButton, CopyInviteLinkButton } from '@/features/invite';
+import { userStore } from '@/entities/user/model/user.store';
+import { FriendsTitle } from './friends-title';
 
 export const FriendsPage = React.memo(() => {
   const { data, isError, isFetching } = useGetFriends();
@@ -17,31 +16,22 @@ export const FriendsPage = React.memo(() => {
   }
 
   if (isError) {
-    throw new Error("Failed to fetch friends");
+    throw new Error('Failed to fetch friends');
   }
 
   return (
-    <Page className={cn("")}>
-      <Typography variant={"h4"} className="font-bold">
-        Friends {data?.totalFriends}
-      </Typography>
-      <Typography
-        variant={"h6"}
-        className="text-center text-text-secondary mb-4"
-      >
-        Invite friends <br /> to get spins and tokens
-      </Typography>
-      <img src={MomDuck} className="w-32" />
-      <div className="my-2 flex items-stretch gap-1 max-w-content w-full">
-        <InviteUserButton className="basis-1/2" userId={user?.id} />
-        <CopyInviteLinkButton userId={user?.id} className="basis-1/2" />
-      </div>
+    <Page className={cn('items-start pt-8')}>
+      <FriendsTitle totalFriends={data?.totalFriends} />
       <FriendsList
         className="mt-4 max-w-content w-full"
         friends={data?.friend ?? []}
       />
+      <div className="flex px-6 w-full left-0 absolute bottom-[calc(80px+24px)] flex-col gap-2">
+        <InviteUserButton className="basis-1/2" userId={user?.id} />
+        <CopyInviteLinkButton userId={user?.id} className="basis-1/2" />
+      </div>
     </Page>
   );
 });
 
-FriendsPage.displayName = "FriendsPage";
+FriendsPage.displayName = 'FriendsPage';
