@@ -70,6 +70,9 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      inset: {
+        navbar: '80px',
+      },
       padding: {
         navbar: '80px',
       },
@@ -77,6 +80,10 @@ export default {
         navbar: '80px',
       },
       colors: {
+        // design
+        'd-green-light': '#43D18A',
+        'd-gray': '#797979',
+        'd-green': '#43D18A',
         // other
         'special-yellow': '#FFB649',
         'special-green': '#25824F',
