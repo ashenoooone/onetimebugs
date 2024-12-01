@@ -7,6 +7,7 @@ export default {
     fontFamily: {
       digital: ['Digital Numbers', 'system-ui'],
       default: ['Space Grotesk', 'system-ui'],
+      onest: ['Onest', 'system-ui'],
     },
     container: {
       center: true,

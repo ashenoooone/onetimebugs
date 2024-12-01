@@ -21,12 +21,7 @@ export const CopyInviteLinkButton = React.memo(
         : TELEGRAM_BOT_LINK;
 
       navigator.clipboard.writeText(link).then(() => {
-        setText(
-          <>
-            Copied
-            <ClipboardCheck className="ml-1" />
-          </>,
-        );
+        setText('Copied');
         setTimeout(() => setText('Copy invite link'), 2000); // Вернуть текст через 2 секунды
       });
     }, [userId]);

@@ -21,12 +21,13 @@ export const FriendsPage = React.memo(() => {
 
   return (
     <Page className={cn('items-start pt-8')}>
-      <FriendsTitle totalFriends={data?.totalFriends} />
+      <FriendsTitle className="mb-8" totalFriends={data?.totalFriends} />
       <FriendsList
-        className="mt-4 max-w-content w-full"
+        className="mt-4 w-full pb-navbar"
         friends={data?.friend ?? []}
       />
-      <div className="flex px-6 w-full left-0 absolute bottom-[calc(80px+24px)] flex-col gap-2">
+      <div className="h-36" />
+      <div className="flex px-6 w-full left-0 fixed bg-bg-primary bottom-navbar pb-8 flex-col gap-2">
         <InviteUserButton className="basis-1/2" userId={user?.id} />
         <CopyInviteLinkButton userId={user?.id} className="basis-1/2" />
       </div>
