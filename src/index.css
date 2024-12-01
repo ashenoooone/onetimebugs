@@ -1,11 +1,15 @@
-@import url("app/styles/fonts/stylesheet.css");
+@import url('app/styles/fonts/stylesheet.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --navbar-height: 80px;
+}
+
 @layer utilities {
   .shadow-text-custom-green {
-    text-shadow: 0px 0px 20px #43D18A;
+    text-shadow: 0px 0px 20px #43d18a;
   }
 }
 
@@ -21,7 +25,9 @@ body {
 
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 300ms, transform 300ms;
+  transition:
+    opacity 300ms,
+    transform 300ms;
 }
 
 .fade-exit {
@@ -30,5 +36,7 @@ body {
 
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 300ms, transform 300ms;
+  transition:
+    opacity 300ms,
+    transform 300ms;
 }

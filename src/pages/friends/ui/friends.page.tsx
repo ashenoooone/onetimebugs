@@ -22,11 +22,9 @@ export const FriendsPage = React.memo(() => {
   return (
     <Page className={cn('items-start pt-8')}>
       <FriendsTitle className="mb-8" totalFriends={data?.totalFriends} />
-      <FriendsList
-        className="mt-4 w-full pb-navbar"
-        friends={data?.friend ?? []}
-      />
-      <div className="h-36" />
+      <FriendsList className="mt-4 w-full" friends={data?.friend ?? []} />
+      {/* для того чтобы элементы отображались */}
+      <div className="h-[calc(var(--navbar-height)+90px+52px)]" />
       <div className="flex px-6 w-full left-0 fixed bg-bg-primary bottom-navbar pb-8 flex-col gap-2">
         <InviteUserButton className="basis-1/2" userId={user?.id} />
         <CopyInviteLinkButton userId={user?.id} className="basis-1/2" />
