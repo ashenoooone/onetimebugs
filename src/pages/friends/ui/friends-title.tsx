@@ -17,7 +17,7 @@ export const FriendsTitle = (props: Props) => {
       FRIENDS
       <span
         className={cn(
-          'text-lg absolute top-0 w-max left-[calc(100%+2px)] text-d-gray',
+          'text-lg absolute font-normal -top-3 w-max left-[calc(100%+2px)] text-d-gray',
           {
             'text-d-red': !totalFriends,
           },
