@@ -17,7 +17,7 @@ export const FriendsList = React.memo((props: FriendsListProps) => {
   return (
     <div className={cn('flex flex-col gap-3', className)}>
       {friends.length > 0 ? (
-        [...friends, ...friends].map((friend) => (
+        friends.map((friend) => (
           <Friend className="w-full" item={friend} key={friend.telegramId} />
         ))
       ) : (
