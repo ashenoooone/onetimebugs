@@ -1,8 +1,8 @@
-import { cn } from "@/shared/utils/cn";
-import React from "react";
-import { LeaderboardType } from "../model/types";
-import { LeaderboardHeader } from "./leaderboard-header";
-import { LeaderboardItem } from "./leaderboard-item";
+import { cn } from '@/shared/utils/cn';
+import React from 'react';
+import { LeaderboardType } from '../model/types';
+import { LeaderboardHeader } from './leaderboard-header';
+import { LeaderboardItem } from './leaderboard-item';
 
 type LeaderboardProps = {
   className?: string;
@@ -13,9 +13,9 @@ export const Leaderboard = React.memo((props: LeaderboardProps) => {
   const { className, leaderboard } = props;
 
   return (
-    <div className={cn("max-w-content w-full", className)}>
-      <LeaderboardHeader leaderboard={leaderboard} />
-      <div className="flex flex-col gap-4 mt-4">
+    <div className={cn('flex flex-col w-full', className)}>
+      <LeaderboardHeader className="mb-6" leaderboard={leaderboard} />
+      <div className="flex flex-col mt-4">
         {leaderboard.users.map((user) => {
           return (
             <LeaderboardItem
@@ -26,8 +26,9 @@ export const Leaderboard = React.memo((props: LeaderboardProps) => {
           );
         })}
       </div>
+      <div className="h-navbar" />
     </div>
   );
 });
 
-Leaderboard.displayName = "Leaderboard";
+Leaderboard.displayName = 'Leaderboard';

@@ -4,6 +4,18 @@ import plugin from 'tailwindcss';
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    backgroundImage: {
+      'second-place': `
+          linear-gradient(0deg, #BDBDBD, #BDBDBD),
+          radial-gradient(113.06% 50% at 50% 50%, #6C6C6C 0%, #BDBDBD 100%)
+        `,
+      'first-place': `
+          radial-gradient(113.06% 50% at 50% 50%, #E18C23 0%, #FFC800 100%)
+        `,
+      'third-place': `
+          radial-gradient(113.06% 50% at 50% 50%, #B75818 0%, #EA6A15 100%)
+        `,
+    },
     fontFamily: {
       digital: ['Digital Numbers', 'system-ui'],
       default: ['Space Grotesk', 'system-ui'],
@@ -33,7 +45,7 @@ export default {
         h5: '32px',
         h6: '24px',
         'subtitle-1': '24px',
-        'subtitle-2': '24px',
+        'subtitle-2': '17px',
         'body-1': '24px',
         'body-2': '20px',
         button: '20px',
@@ -82,8 +94,16 @@ export default {
       },
       colors: {
         // design
+        'd-bronze-light': '#BDBDBD',
+        'd-bronze-dark': '#6C6C6C',
+        'd-gold-light': '#FFC800',
+        'd-gold-dark': '#E18C23',
+        'd-blue': '#0081EB',
+        'bronze-light': '#EA6A15',
+        'bronze-dark': '#B75818',
         'd-green-light': '#43D18A',
         'd-gray': '#797979',
+        'd-gray-dark': '#2F2F2F',
         'd-green': '#43D18A',
         'd-red': '#D14343',
         // other

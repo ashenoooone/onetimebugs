@@ -1,10 +1,8 @@
-import { cn } from "@/shared/utils";
-import React, { useMemo } from "react";
-import { LeaderBoardUserType } from "../model/types";
-import { Avatar, Text } from "@telegram-apps/telegram-ui";
-import { getUserAvatar } from "@/entities/user/model/utils";
-import { Typography } from "@/shared/ui/typography";
-import { formatNumber } from "@/shared/utils/format-number";
+import { cn } from '@/shared/utils';
+import React from 'react';
+import { LeaderBoardUserType } from '../model/types';
+import { Typography } from '@/shared/ui/typography';
+import { formatNumber } from '@/shared/utils/format-number';
 
 type LeaderboardItemProps = {
   user: LeaderBoardUserType;
@@ -14,39 +12,37 @@ type LeaderboardItemProps = {
 export const LeaderboardItem = React.memo((props: LeaderboardItemProps) => {
   const { user, currentUser } = props;
 
-  const userPosition = useMemo(() => {
-    if (user.position === 1) {
-      return "🥇";
-    }
-    if (user.position === 2) {
-      return "🥈";
-    }
-    if (user.position === 3) {
-      return "🥉";
-    }
-    return `#${user.position}`;
-  }, []);
-
   return (
     <div
-      className={cn("flex p-2 rounded-xl justify-between items-center w-full", {
-        "bg-special-yellow/10": user.telegramId === currentUser.telegramId,
-      })}
+      className={cn(
+        'flex p-2 justify-between items-center w-full cursor-pointer border-b border-d-gray-dark',
+      )}
     >
-      <div className="flex gap-2 items-center">
-        <Avatar size={48} src={getUserAvatar(user.username)} />
+      <div className="flex gap-3.5 items-center">
+        <Typography
+          variant={'h6'}
+          className={cn(
+            'w-8 h-8 flex items-center justify-center bg-d-gray-dark',
+            {
+              'bg-first-place': user.position === 1,
+              'bg-second-place': user.position === 2,
+              'bg-third-place': user.position === 3,
+            },
+          )}
+        >
+          {user.position}
+        </Typography>
         <div className="flex flex-col">
-          <Typography variant={"subtitle-1"} className="font-bold">
+          <Typography variant={'subtitle-2'} className="font-bold uppercase">
             {user.username}
           </Typography>
-          <Typography variant={"subtitle-1"} className="text-text-secondary">
-            {formatNumber(user.balance)}
+          <Typography variant={'subtitle-2'} className="text-d-gray font-onest">
+            BUGS {formatNumber(user.balance)}
           </Typography>
         </div>
       </div>
-      <Typography variant={"subtitle-1"}>{userPosition}</Typography>
     </div>
   );
 });
 
-LeaderboardItem.displayName = "LeaderboardItem";
+LeaderboardItem.displayName = 'LeaderboardItem';
