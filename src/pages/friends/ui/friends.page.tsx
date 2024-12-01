@@ -20,7 +20,7 @@ export const FriendsPage = React.memo(() => {
   }
 
   return (
-    <Page className={cn('items-start pt-8')}>
+    <Page className={cn('items-start px-6 pt-8')}>
       <FriendsTitle className="mb-8" totalFriends={data?.totalFriends} />
       <FriendsList className="mt-4 w-full" friends={data?.friend ?? []} />
       {/* для того чтобы элементы отображались */}
